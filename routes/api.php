@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\DeviceController;
 
 
 /*
@@ -17,6 +18,8 @@ use App\Http\Controllers\ApiController;
 */
 
 Route::get('get-data', [ApiController::class, 'getData']);
+Route::get('get-devices/{id?}', [DeviceController::class, 'list']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

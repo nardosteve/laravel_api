@@ -11,12 +11,27 @@ class ApiController extends Controller
         //Key: Value
         //Return in JSON
         $someData = [
-            'name' => 'Stephen Mungai Muroki',
-            'username' => 'smungaimuroki',
-            'email' => 'smungaimuroki@gmail.com',
-            'password' => '@password1234'
+            [
+                'name' => 'Stephen Mungai Muroki',
+                'username' => 'smungaimuroki',
+                'email' => 'smungaimuroki@gmail.com',
+                'password' => '@password1234'
+            ],
+            [
+                'name' => 'Stephen Mungai Muroki',
+                'username' => 'smungaimuroki',
+                'email' => 'smungaimuroki@gmail.com',
+                'password' => '@password1234'
+            ],
         ];
 
-        return $someData;
+        $result = [];
+
+        foreach($someData as $data){
+            $result[] = $data;
+        }
+
+        // return $result;
+        return response()->json(['someData' => $result]);
     }
 }
