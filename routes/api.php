@@ -19,6 +19,7 @@ use App\Http\Controllers\DeviceController;
 
 Route::get('get-data', [ApiController::class, 'getData']);
 Route::get('get-devices/{id?}', [DeviceController::class, 'list']);
+Route::post('add-device', [DeviceController::class, 'addDevice']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
